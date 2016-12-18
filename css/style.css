@@ -30,10 +30,26 @@ body {
 }
 
 .clock-face {
+  background: url('../images/clock_numbers.svg') no-repeat;
+  background-size: 97%;
+  background-position: 50% 50%;
   position: relative;
   width: 100%;
   height: 100%;
   transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.clock-face:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
 }
 
 .hand {
@@ -47,7 +63,8 @@ body {
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
-.second-hand {
+.hand.second-hand {
+  height: 4px;
   width: 50%;
 }
 
